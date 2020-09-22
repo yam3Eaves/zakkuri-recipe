@@ -24,15 +24,15 @@
       <% if .present? %>
         <% .each do ||%>
           <li class='list'>
-            <%= link_to item_path(item.id) do %>
-            <div class='item-img-content'>
-              <%= image_tag item.image, class: "item-img" %>
+            <%= link_to _path(.id) do %>
+            <div class='-img-content'>
+              <%= image_tag .image, class: "-img" %>
             </div>
-            <div class='item-info'>
-              <h3 class='item-name'>
-                <%= item.name %>
+            <div class='-info'>
+              <h3 class='-name'>
+                <%=  %>
               </h3>
-              <div class='item-price'>
+              <div class='-price'>
                 <span><%=  %><br></span>
                 <div class='star-btn'>
                   <%= image_tag "star.png", class:"star-icon" %>
