@@ -1,0 +1,69 @@
+<div class="items-sell-contents">
+  <header class="items-sell-header">
+    
+  </header>
+  <div class="items-sell-main">
+    <h2 class="items-sell-title">商品の情報を入力</h2>
+    <%= form_with model: @recipe, url: recipes_path, local: true do |f| %>
+
+    
+    <%# <%= render 'shared/error_messages', model: f.object %> 
+    
+
+    <%# レシピ画像 %>
+    <div class="img-upload">
+      <div class="weight-bold-text">
+        レシピ画像
+        <span class="indispensable">必須</span>
+      </div>
+      <div class="click-upload">
+        <p>
+          クリックしてファイルをアップロード
+        </p>
+        <%= f.file_field :image, id:"recipe-image" %>
+      </div>
+    </div>
+    <%# /レシピ画像 %>
+    <%# レシピ名とレシピ説明 %>
+    <div class="new-recipes">
+      <div class="weight-bold-text">
+        商品名
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :recipe_name, class:"recipes-text", placeholder:"レシピ名（必須)", maxlength:"40" %>
+      <div class="items-explain">
+        <div class="">
+          レシピの説明
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :explanation, class:"recipes-text", placeholder:"レシピの概要（必須 500文字まで）例）" ,rows:"4" ,maxlength:"500" %>
+      </div>
+    </div>
+    <%# /レシピ名とレシピ説明 %>
+
+    <%# 材料と量 %>
+    <div>
+   
+    <%# /材料と量 %>
+
+  
+    <%# 下部ボタン %>
+    <div class="post-btn-contents">
+      <%= f.submit "レシピを投稿する" ,class:"post-btn" %>
+      <%=link_to 'もどる', root_path, class:"back-btn" %>
+    </div>
+    <%# /下部ボタン %>
+  </div>
+  <% end %>
+
+  <footer class="items-sell-footer">
+    <ul class="menu">
+      <li><a href="#">プライバシーポリシー</a></li>
+      <li><a href="#">ざっくりレシピ利用規約</a></li>
+    </ul>
+    <%# <%= link_to image_tag('furima-logo-color.png' , size: '185x50'), "/" %>
+    <p class="inc">
+      ©︎Zakkurireipe,Inc.
+    </p>
+  </footer>
+</div>
